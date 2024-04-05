@@ -1,0 +1,363 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="user_ms.master.cs" Inherits="Application1.User.user_ms" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <style>
+        #num1,#num3{
+            margin-left:-60px;
+            
+        }
+        #num1{
+            margin-right:-30px;
+            
+        }
+        @media(max-width: 991px)
+        {
+
+ 
+            nav.show{
+                display:block;
+            }
+        }
+        #Label2{
+           margin-left:20px;
+           border-radius:5px 5px 5px 5px;
+           
+        }
+        
+    </style>
+     
+
+    
+
+    <link rel="stylesheet" href="../boostrap/css/bootstrap.css" />
+     <link rel="stylesheet" href="../boostrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../boostrap/css/style.css" />
+    <script src="../boostrap/js/bootstrap.js"></script>
+
+    <style>
+        #nav1{
+            margin-top:-10px;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="GFG" width="100%" style="background-color:#aad6ec">
+    
+    <form id="form1" runat="server">
+        
+        <div class="container-fluid">
+            <div class="row form-group" style="background-color:#000068;">
+                <div class="col custom-control-inline" >
+                    <header class="" style="background-color:#000068; margin-top:10px; height:100px">
+                        <span style="margin-left: 900px" class="custom-control-inline text-white"> <p>WelCome To &nbsp;</p>  <asp:Label ID="Label1" runat="server" Font-Bold="true" ForeColor="white"></asp:Label>
+                             
+                            </span>
+                        <div class="toggle-btn" onclick="myfunction();">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+
+                        </div>
+                        <div class="toggle-btn1 form-group custom-control-inline" onclick="myfunction();">
+                            <span class="custom-control-inline">
+
+                                <asp:Panel ID="Panel4" runat="server">
+                                    <span class="custom-control-inline" style="margin-top:-200px">
+
+                                         <asp:Panel ID="Panel2" runat="server" DefaultButton="ImageButton1">
+                                            <asp:ImageButton ID="ImageButton1" runat="server" ToolTip="Log Out" ImageUrl="~/image/LoginIcon.png" Width="25px" OnClick="ImageButton1_Click" />
+                                         </asp:Panel>    
+                                        
+                                        <a href="AddtoCart.aspx">
+
+                                            <asp:Panel ID="Panel1" runat="server" DefaultButton="ImageButton4">
+                                             <asp:ImageButton ID="ImageButton4" CssClass="pl-2" runat="server" ToolTip="Your Cart" ImageUrl="~/image/shopping.png" Width="30px" OnClick="ImageButton4_Click" />
+                                                <div style="margin-top: -45px">
+                                                    <asp:Label ID="Label2" runat="server" Font-Size="12px" ForeColor="white"></asp:Label>
+                                                </div>
+                                            </asp:Panel>
+                                        </a>
+                                    </span>
+                               </asp:Panel>
+
+                            </span>
+                        </div>
+                       
+
+                        <div class="logo">
+                            <h1 class="font-weight-bold text-white">Foot Ware</h1>
+                            
+                        </div>
+                         
+                        <nav id="nav1">
+                            <ul style="margin-top:-15px;">
+                                <li><a href="home.aspx" style="margin-left:-1100px">Home</a></li>
+                                <li><a href="WebForm1.aspx" style="margin-left:-1050px">About</a></li>
+                                <li><a href="FeedBack.aspx" style="margin-left:-1000px">FeedBack</a></li>
+                                <li><a href="Complite.aspx" style="margin-left:-930px">Check Order</a></li>
+                                <!--<li><a href="Complite.aspx" style="//margin-left:-850px">Check Order</a></li>-->
+                                
+                                
+
+                            </ul>
+                        </nav>
+                        <nav id="nav">
+                            <ul>
+                                <li><a href="home.aspx">Home</a></li>
+                                <li><a href="AboutUs.aspx">About</a></li>
+                                <li><a href="FeedBack.aspx">Feed Back</a></li>
+                                <li><a href="AddtoCart.aspx">Your Cart</a></li>
+                                <li><a href="Login.aspx">Logout</a></li>
+                            </ul>
+
+                            <div>
+                            </div>
+
+                        </nav>
+                        
+
+                    </header>
+                    
+                </div>
+                        
+                
+            </div>
+                    <div >
+                        <div class="row bg-danger" style="margin-top:-15px;">
+                       
+                        <div class="col h-100" style="margin-left:75%">
+
+                             <button style="margin-left:83%;" type="button" class="btn btn-primary h-100" data-toggle="modal" data-target="#myModal">
+                                Search
+                            </button>
+                            
+
+                            <!-- Button to Open the Modal -->
+                           
+
+                            <!-- The Modal -->
+                            <div class="modal fade" id="myModal" data-keyboard="false" data-backdrop="static">
+                                <div class="modal-dialog modal-dialog-scrollable">
+                                    <div class="modal-content">
+
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                            <h1 class="modal-title">Search Box</h1>
+                                            <button type="button" class="close" data-dismiss="modal">×</button>
+                                        </div>
+
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+
+                                            <asp:TextBox ID="TextBox1" CssClass="form-control" placeholder="Search Quick" runat="server" onChange="invokingOnChangeEvent();"></asp:TextBox>
+                                           <!-- <input type="text" id="text1"
+                                                onChange=invokingOnChangeEvent()
+                                                oninput=invokingOnInputEvent()
+                                                onkeydown=invokingOnKeyDownEvent()
+                                                onkeyup=invokingOnKeyUpEvent()
+                                                onkeypress=invokingOnKeyPressEvent()>-->
+
+                                            <ajaxToolkit:AutoCompleteExtender ID="TextBox1_AutoCompleteExtender" runat="server" BehaviorID="TextBox1_AutoCompleteExtender" DelimiterCharacters="" ServiceMethod="SearchUser" CompletionSetCount="10" CompletionInterval="100" MinimumPrefixLength="1" TargetControlID="TextBox1">
+                                            </ajaxToolkit:AutoCompleteExtender>
+
+                                            
+                                            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                                        </div>
+                                        
+                                        
+                                        <div class="modal-footer">
+                                            <asp:Panel ID="Panel3" runat="server" DefaultButton="search">
+                                                <asp:Button ID="search" class="btn btn-primary" data-dismiss="modal" runat="server" Text="Search" OnClick="search_Click"/>
+                                            </asp:Panel>
+                                            
+                                            <!--<button type="button" class="btn btn-primary" data-dismiss="modal">Search</button>-->
+                                             <!--<input type="button" id="btn" value="Redirect Me" title="Redirect" onclick="Redirect()"/>-->
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    </div>  
+        
+        <!-- CONTENT -->
+            <div class="col-12">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+        <!-- footer -->
+            <div class="row form-group" style="margin-bottom:-20px;">
+                <div class="col" style="background-color:#000068;" align="center">
+                    <div>
+                        <table width="100%">
+                            <tr>
+                                <td align="center" style="color:white">
+                                    <br />
+                                    <br />
+                                    <a href="#">
+                                    <asp:Label ID="Label6" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="XX-Large" Font-Strikeout="False" Font-Underline="True" Text="Contact Us" ForeColor="White"></asp:Label>
+                                    </a><br />
+                &nbsp;
+                                    <br />
+                                    <img src="../image/location.png" style="height: 29px; width: 19px" />
+                                    <asp:Label ID="Label5" runat="server" Font-Bold="True" Text="Tramba,Rajkot,Gujrat..." ForeColor="White"></asp:Label>
+                                    <br />
+                                    <img src="../image/cell3.png" style="height: 24px; width: 18px" />
+                                    <a href="tel:+911860123100" for="" style="font-size: medium; font-weight: bold; color: white">1860 123 100</a>
+                                    <br />
+                                    <img src="../image/mail.png" style="height: 23px; width: 28px" />
+                                    <a href="mailto: MBFootWare@.com" for="" style="font-size: medium; font-weight: bold; color: white">MBFootWare@.com</a>
+                                    <br />
+                                </td>
+
+
+                                <td align="center" style="color:white">
+                                    <asp:Label ID="Label9" runat="server" Font-Bold="True" Font-Italic="True" Text="Opening Hours" Font-Size="XX-Large" Font-Underline="True" ForeColor="White"></asp:Label>
+                                    <br />
+                                    <br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <asp:Label ID="Label10" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Medium" Text="Everyday" ForeColor="White"></asp:Label>
+                                    <br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <asp:Label ID="Label11" runat="server" Font-Bold="True" Text="24/7 Hours Service" ForeColor="White"></asp:Label>
+                                    <br />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table width="100%">
+                            <tr>
+                                <td align="center"style="color:white">
+                                   
+                                </td>
+                                <td align="center" style="color:white">
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table width="100%">
+                            <tr>
+                                <td align="center" style="color:white">
+                                    
+                                </td>
+                                <td align="center">
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <asp:Label ID="Label12" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="XX-Large" Font-Underline="True" Text="MB FootWare" ForeColor="White"></asp:Label>
+                    <br />
+                    <br />
+                    <p style="color: white">&copy;<%=DateTime.Now.Year.ToString() %>
+                    <asp:Label ID="Label13" runat="server" Font-Bold="True" Text="Devloped By Bimal Bera" ForeColor="White"></asp:Label>
+                    <br />
+                    <br />
+                    <br />
+
+                    <br />
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </form>
+        
+    <script type="text/javascript">
+        function myfunction() {
+            var navbar = document.getElementById('nav');
+            navbar.classList.toggle('show');
+        }
+        function fun() {
+            document.getElementById('search').style.display="block";
+        }
+        /*function Redirect() {
+            const button = document.getElementById('btn');
+            const firstInput = document.getElementById('TextBox1');
+
+            button.addEventListener('click', () => {
+                const url = 'https://localhost:44394/User/search.aspx';
+                window.location.href = `${url}?id=${firstInput.value}`;
+            });
+        }*/
+
+        function invokingOnChangeEvent(event) {
+            console.log("onInput event occurred")
+            const firstInput = document.getElementById('TextBox1');
+            
+            const url = 'https://localhost:44394/User/search.aspx';
+            window.location.href = `${url}?id=${firstInput.value}`;
+            //showpopup();
+        }
+        /*function invokingOnInputEvent(event) {
+            console.log("onInput event occurred")
+            const firstInput = document.getElementById('text1');
+
+            const url = 'https://localhost:44394/User/search.aspx';
+            window.location.href = `${url}?id=${firstInput.value}`;
+            document.getElementById('myModal').style.display = 'block';
+
+        }*/
+        /*function invokingOnKeyDownEvent(event) {
+            console.log("onInput event occurred")
+            const firstInput = document.getElementById('text1');
+
+            const url = 'https://localhost:44394/User/search.aspx';
+            window.location.href = `${url}?id=${firstInput.value}`;
+            document.getElementById('myModal').style.display = 'block';
+
+        }*/
+        /*function invokingOnKeyUpEvent(event) {
+            console.log("onInput event occurred")
+            const firstInput = document.getElementById('text1');
+
+            const url = 'https://localhost:44394/User/search.aspx';
+            window.location.href = `${url}?id=${firstInput.value}`;
+            document.getElementById('myModal').style.display = 'block';
+
+        }*/
+        /*function invokingOnKeyPressEvent(event) {
+            console.log("onInput event occurred")
+            const firstInput = document.getElementById('text1');
+
+            const url = 'https://localhost:44394/User/search.aspx';
+            window.location.href = `${url}?id=${firstInput.value}`;
+            document.getElementById('myModal').style.display = 'block';
+
+        }*/
+       /* function showpopup(params) {
+            var card = document.getElementsByClassName('myModal');
+            var popup;
+            for (let j = 0; j < card.length; j++) {
+
+            const firstInput = document.getElementById('TextBox1');
+
+            const url = 'https://localhost:44394/User/search.aspx';
+            window.location.href = `${url}?id=${firstInput.value}`;
+
+            popup = document.getElementById(params);
+            popup.style.display = 'block';
+          }*/
+        
+    </script>
+   
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

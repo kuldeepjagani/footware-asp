@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: darkgray;
+    width:97%;
+}
+#menu{
+    border-radius: 10px;
+    background-color: black;
+    box-shadow: 0px 1px 15px 3px aqua inset;
+}
+#menu ul{
+    display: inline-block;
+    margin-top: 20px;
+}
+ul,li,a{
+    color: white;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+#content{
+    /* margin-top: 5px; */
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 1px 10px 3px red inset;
+}
+#post{
+    margin-top: 15px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    box-shadow: 0px 1px 15px 3px orange inset;
+}
+.font{
+    font:bold;
+    color: blue;
+}
+.font1{
+    font:bold;
+    font-size: large;
+}
+.search{
+    margin-top: 15px;
+    background-color: black;
+    color:white;
+    text-align: left;
+    border-radius: 5px;
+    margin-left:2px;
+    box-shadow: 0px 1px 5px 3px pink inset;
+}
+.textbox{
+    text-align: center;
+    margin-top: 10px;
+}
+.calender{
+    margin-top: 15px;
+    background-color: black;
+    color:white;
+    text-align: left;
+    border-radius: 5px;
+}
+#foot{
+    /* background-color:rgb(42, 167, 192); */
+    background-color:black;
+    color: white;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 15px 3px aqua inset;
+}
+.wel{
+    margin-top: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 15px 3px gray inset;
+    width:100%;
+    background-color: aliceblue;
+    box-shadow: 0px 1px 15px 3px rgb(42, 225, 106) inset;
+}
+@media screen and (max-width:1000px) {
+    #content{
+
+        box-shadow: 0px 1px 15px 3px blue inset;
+    }
+    #post{
+        box-shadow: 0px 1px 15px 3px rgb(16, 182, 232) inset;
+    }
+    .wel{
+        box-shadow: 0px 1px 15px 3px rgb(234, 196, 43) inset;
+    }
+    #menu{
+        box-shadow: 0px 1px 15px 3px rgb(225, 25, 25) inset;
+    }
+    #foot{
+        box-shadow: 0px 1px 15px 3px rgb(225, 25, 25) inset;
+    }
+    
+}
